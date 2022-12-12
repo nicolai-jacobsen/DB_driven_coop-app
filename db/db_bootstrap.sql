@@ -15,14 +15,15 @@ Create table Students (
 	GPA DECIMAL(3,2),
 	Coop_cycle VARCHAR(6),
 	Application_status VARCHAR(14),
-	Year VARCHAR(3)
+	Year VARCHAR(3),
+	Advisor_id VARCHAR(9)
 );
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Angie', 'Aulsford', 'aaulsford0@foxnews.com', '002181021', 52, 'Business Administration', 'Emerging Markets', 3.92, 'Spring', 'Applying', '4th');
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Cart', 'Rigard', 'crigard1@pagesperso-orange.fr', '009762454', 69, 'History', 'Financial Technology', 2.65, 'Spring', 'Accepted Offer', '4th');
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Sharla', 'Smidmor', 'ssmidmor2@soup.io', '006909902', 75, 'Data Science & Business Administration', 'Accounting', 2.6, 'Fall', 'Not Applying', '5th');
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Ilyse', 'Kettell', 'ikettell3@behance.net', '000543899', 51, 'Civil Engineering', 'Emerging Markets', 3.14, 'Fall', 'Applying', '2nd');
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Marthena', 'Datte', 'mdatte4@etsy.com', '001952421', 39, 'Economics & Mathematics', 'Consulting', 2.86, 'Fall', 'Accepted Offer', '4th');
-insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year) values ('Marcellus', 'Cleyne', 'mcleyne5@dropbox.com', '002377734', 74, 'Computer Science & Economics', 'Finance', 3.86, 'Spring', 'Applying', '2nd');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Angie', 'Aulsford', 'aaulsford0@foxnews.com', '002181021', 52, 'Business Administration', 'Emerging Markets', 3.92, 'Spring', 'Applying', '4th', '005581733');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Cart', 'Rigard', 'crigard1@pagesperso-orange.fr', '009762454', 69, 'History', 'Financial Technology', 2.65, 'Spring', 'Accepted Offer', '4th', '000654882');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Sharla', 'Smidmor', 'ssmidmor2@soup.io', '006909902', 75, 'Data Science & Business Administration', 'Accounting', 2.6, 'Fall', 'Not Applying', '5th', '004634824');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Ilyse', 'Kettell', 'ikettell3@behance.net', '000543899', 51, 'Civil Engineering', 'Emerging Markets', 3.14, 'Fall', 'Applying', '2nd', '001187169');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Marthena', 'Datte', 'mdatte4@etsy.com', '001952421', 39, 'Economics & Mathematics', 'Consulting', 2.86, 'Fall', 'Accepted Offer', '4th', '007909998');
+insert into Students (First_name, Last_name, Email, NU_ID, Credits, Major, Minors, GPA, Coop_cycle, Application_status, Year, Advisor_id) values ('Marcellus', 'Cleyne', 'mcleyne5@dropbox.com', '002377734', 74, 'Computer Science & Economics', 'Finance', 3.86, 'Spring', 'Applying', '2nd', '004199674');
 
 
 create table Completed_courses (
@@ -130,8 +131,8 @@ create table Coop_offers (
 	Skills VARCHAR(50),
 	Description TEXT,
 	Min_GPA DECIMAL(2,1),
-	Start_date DATE,
-	End_date DATE,
+	Start_date TEXT,
+	End_date TEXT,
 	Company_id VARCHAR(7)
 );
 insert into Coop_offers (coop_id, Position, Pref_majors, Pref_skills, Skills, Description, Min_GPA, Start_date, End_date, Company_id) values ('007879274', 'Civil Engineer', 'Economics & Mathematics', 'Kaizen', 'CWSP', null, 2.8, '2023-01-23', '2023-06-16', '0038685');
@@ -152,16 +153,16 @@ create table Applied (
 	Status VARCHAR(19),
 	PRIMARY KEY (Student_id, Coop_id)
 );
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '00990234', '2023-01-06', 'Denied Offer');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '07366168', '2023-01-08', 'Interview completed');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '03400884', '2023-01-05', 'Denied Offer');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '08571585', '2023-01-10', 'Denied');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '08207098', '2023-01-25', 'Accepted Offer');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '05299157', '2023-01-01', 'Denied Offer');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '03166582', '2023-01-04', 'Interview completed');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '01449749', '2023-01-07', 'Interview completed');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '03021468', '2023-01-10', 'Accepted Offer');
-insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '05949020', '2023-01-30', 'Denied');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '007879274', '2023-01-06', 'Denied Offer');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '000369752', '2023-01-08', 'Interview completed');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002181021', '001429665', '2023-01-05', 'Denied Offer');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '001429665', '2023-01-10', 'Denied');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '003678936', '2023-01-25', 'Accepted Offer');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('000543899', '007990813', '2023-01-01', 'Denied Offer');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '002908834', '2023-01-04', 'Interview completed');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '007990813', '2023-01-07', 'Interview completed');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '007879274', '2023-01-10', 'Accepted Offer');
+insert into Applied (Student_id, Coop_id, Date, Status) values ('002377734', '003678936', '2023-01-30', 'Denied');
 
 create table Accepted (
 	Student_id VARCHAR(9),
@@ -191,6 +192,7 @@ insert into Advisors (Employee_id, First_name, Last_name, Email, Phone, Dept_id)
 insert into Advisors (Employee_id, First_name, Last_name, Email, Phone, Dept_id) values ('004312356', 'Reena', 'McAster', 'rmcaster7@ucla.edu', '575-799-1404', '0098');
 insert into Advisors (Employee_id, First_name, Last_name, Email, Phone, Dept_id) values ('004199674', 'Thorny', 'Marsie', 'tmarsie8@angelfire.com', '595-482-8209', '0065');
 insert into Advisors (Employee_id, First_name, Last_name, Email, Phone, Dept_id) values ('008283623', 'Arlena', 'Ropert', 'aropert9@google.com', '405-823-3727', '0065');
+
 
 create table Alumni (
 	Student_id VARCHAR(9) PRIMARY KEY,

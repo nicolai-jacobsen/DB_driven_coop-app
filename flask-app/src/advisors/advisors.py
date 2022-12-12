@@ -26,3 +26,15 @@ def get_applied():
        json_data.append(dict(zip(row_headers, row)))
    return jsonify(json_data)
 
+@advisors.route('/majors')
+def get_majors():
+   cur = db.get_db().cursor()
+   cur.execute('select * from Majors')
+   row_headers = [x[0] for x in cur.description]
+   json_data = []
+   theData = cur.fetchall()
+   for row in theData:
+       json_data.append(dict(zip(row_headers, row)))
+   return jsonify(json_data)
+
+
