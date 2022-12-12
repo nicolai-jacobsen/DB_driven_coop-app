@@ -41,7 +41,7 @@ def post_coop():
    end_date = request.form['end_date']
    comp_id = request.form['company_id']
    coop_id = random.randint(100000000, 999999999)
-   query = f'INSERT INTO Coop_offers(coop_id, Position, Pref_majors, Pref_skills, skills, Description, Min_gpa, start_date, end_date, Company_id) VALUES(\"{coop_id}\", \"{position}\", \"{pref_majors}\", \"{pref_skills}\", \"{skills}\", \"{description}\", {min_gpa}, \"{start_date}\", \"{end_date}\", \"{comp_id}\")'
+   query = f'INSERT INTO Coop_offers(coop_id, Position, Pref_majors, Pref_skills, Skills, Description, Min_GPA, Start_date, End_date, Company_id) VALUES(\"{coop_id}\", \"{position}\", \"{pref_majors}\", \"{pref_skills}\", \"{skills}\", \"{description}\", {min_gpa}, \"{start_date}\", \"{end_date}\", \"{comp_id}\")'
    cur.execute(query)
    db.get_db().commit()
    return "Success!"
