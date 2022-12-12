@@ -18,7 +18,7 @@ Nicolai Jacobsen
 1. `pip install flask flask-mysql flask-restful cryptography flask-login`
 
 ## Flask App
-The flask app folder contains APIs for three different personas, students, advisors and companies. Each contains get and post request relevant to each persona, these blueprints are then used to form the flask app. 
+The flask app folder contains APIs for three different personas, students, advisors and companies. Each contains get and post requests relevant to each persona, these blueprints are then used to form the flask app. 
 
 ## App Routes:
 * Get Advisor Data
