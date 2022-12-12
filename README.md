@@ -1,4 +1,5 @@
-# CS3200 Final Project - database-driven Northeastern coop website
+# CS3200 Final Project
+# Database-driven Northeastern Co-op Website
 Nicolai Jacobsen
 
 ## How to setup and start the containers
@@ -18,7 +19,7 @@ Nicolai Jacobsen
 1. `pip install flask flask-mysql flask-restful cryptography flask-login`
 
 ## Flask App
-The flask app folder contains APIs for three different personas, students, advisors and companies. Each contains get and post requests relevant to each persona, these blueprints are then used to form the flask app. Each route is used in the appsmith application to create an interactive and useful environemnt for advisors, students and companies.
+The flask app folder contains APIs for three different personas, students, advisors and companies. Each contains get and post requests relevant to each persona, these blueprints are then used to form the flask app. Each route is used in the appsmith application to create an interactive and useful environment for advisors, students and companies.
 
 ## App Routes:
 * Get Advisor Data
@@ -34,5 +35,6 @@ The flask app folder contains APIs for three different personas, students, advis
 ## db
 The database is created using a single db bootstrap file and docker. There are a total of 15 tables in the database, each containing relevant data to the three personas. This database is further explained by the relational diagrams and ER diagrams within the folder phase 2 deliverable pdf.
 
-
+## Diagrams & Wireframes
+Contains the database schema and wireframes showing the concept of the website
 
