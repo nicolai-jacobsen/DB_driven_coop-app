@@ -1,8 +1,5 @@
-# MySQL + Flask Boilerplate Project
-
-This repo contains a boilerplate setup for spinning up 2 docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
+# CS3200 Final Project - database-driven Northeastern coop website
+Nicolai Jacobsen
 
 ## How to setup and start the containers
 **Important** - you need Docker Desktop installed
@@ -20,6 +17,22 @@ This repo contains a boilerplate setup for spinning up 2 docker containers:
 1. `conda activate webdev`
 1. `pip install flask flask-mysql flask-restful cryptography flask-login`
 
+## Flask App
+The flask app folder contains APIs for three different personas, students, advisors and companies. Each contains get and post request relevant to each persona, these blueprints are then used to form the flask app. 
+
+## App Routes:
+* Get Advisor Data
+* Get Application Data
+* Get major data
+* Get student data
+* Post update to application status
+* Post a new application
+* Get company data
+* Get coop offers
+* Post a new coop
+
+## db
+The database is created using a single db bootstrap file and docker. There are a total of 15 tables in the database, each containing relevant data to the three personas. This database is further explained by the relational diagrams and ER diagrams within the folder phase 2 deliverable pdf.
 
 
 
